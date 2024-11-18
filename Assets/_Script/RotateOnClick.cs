@@ -10,12 +10,12 @@ public class RotateOnClick : MonoBehaviour
     private Quaternion originalRotation; // Lưu trữ góc quay ban đầu
     private Quaternion rotatedRotation; // Lưu trữ góc quay sau khi xoay
     private bool isRotating = false; // Biến lưu trữ trạng thái đang xoay
-    public float angle = 90;
+    public Vector3 angle ;
 
     void Awake()
     {
         originalRotation = transform.rotation;
-        rotatedRotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0, angle, 0));
+        rotatedRotation = Quaternion.Euler(transform.eulerAngles + angle);
     }
     void OnMouseDown()
     {
